@@ -39,19 +39,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
+    #Third party
     'allauth',
     'allauth.account',
+     'crispy_forms',
+
+    #local
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
-    'crispy_forms',
+    'books.apps.BooksConfig',
+   
 ]
 SITE_ID = 1
 AUTHENTICATION_BACKENDS = (
 'django.contrib.auth.backends.ModelBackend',
 'allauth.account.auth_backends.AuthenticationBackend',
 )
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'admin@bookstore.com'
 
 ACCOUNT_USERNAME_REQUIRED = False # new
 ACCOUNT_AUTHENTICATION_METHOD = 'email' # new
