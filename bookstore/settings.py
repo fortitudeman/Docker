@@ -46,10 +46,9 @@ INSTALLED_APPS = [
     'crispy_forms',
 ]
 SITE_ID = 1
-
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+'django.contrib.auth.backends.ModelBackend',
+'allauth.account.auth_backends.AuthenticationBackend',
 )
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -59,7 +58,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email' # new
 ACCOUNT_EMAIL_REQUIRED = True # new
 ACCOUNT_UNIQUE_EMAIL = True # new
 ACCOUNT_SESSION_REMEMBER = True
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
